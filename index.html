@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPlug  | Shop on WhatsApp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <span class="logo-icon">🛍️</span>
+                        <span class="logo-text">FitPlug</span>
+                    </a>
+                </div>
+                
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" placeholder="Search styles, brands, or items...">
+                </div>
+                
+                <div class="nav-links">
+                    <a href="#new-arrivals" class="nav-link">New Arrivals</a>
+                    <a href="#categories" class="nav-link">Categories</a>
+                    <a href="admin.html" class="nav-link admin-link">Admin</a>
+                </div>
+                
+                <div class="nav-icons">
+                    <a href="saved.html" class="nav-icon">
+                        <i class="far fa-heart"></i>
+                        <span class="badge">24</span>
+                    </a>
+                    <a href="#cart" class="nav-icon cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="badge cart-count">0</span>
+                    </a>
+                    <a href="#profile" class="nav-icon">
+                        <i class="far fa-user"> </i>
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="logo">FitPlug</span>
+            <button class="mobile-menu-close" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="mobile-menu-links">
+            <a href="index.html" class="mobile-menu-link active">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="saved.html" class="mobile-menu-link">
+                <i class="far fa-heart"></i> Saved Items
+            </a>
+            <a href="#categories" class="mobile-menu-link">
+                <i class="fas fa-th-large"></i> Categories
+            </a>
+            <a href="#style" class="mobile-menu-link">
+                <i class="fas fa-palette"></i> Style
+            </a>
+            <a href="#profile" class="mobile-menu-link">
+                <i class="far fa-user"></i> Profile
+            </a>
+        </div>
+        <div class="mobile-menu-footer">
+            <a href="https://wa.me/233598446269?text=Hi%20FitPlug%21%20I%27d%20like%20to%20shop%20with%20you." 
+               target="_blank" class="btn btn-whatsapp-mobile">
+                <i class="fab fa-whatsapp"></i> Shop on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Elevate Your Style</h1>
+            <p class="hero-subtitle">Premium fashion delivered seamlessly through WhatsApp</p>
+            <a href="https://wa.me/233598446269?text=Hi%20FitPlug%21%20I%27d%20like%20to%20shop%20with%20you." 
+               target="_blank" class="btn btn-primary">
+                <i class="fab fa-whatsapp"></i> Shop on WhatsApp
+            </a>
+        </div>
+        
+        <div class="hero-video">
+            <video autoplay muted loop playsinline poster="assets/hero-poster.jpg">
+                <source src="assets/videos/hero-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Shop by Category</h2>
+                <a href="#all-categories" class="section-link">See All →</a>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="#food" class="category-card">
+                    <div class="category-icon">🥗</div>
+                    <h3 class="category-title">Food</h3>
+                    <p class="category-desc">Healthy & delicious meals</p>
+                </a>
+                
+                <a href="#beauty" class="category-card">
+                    <div class="category-icon">💄</div>
+                    <h3 class="category-title">Beauty</h3>
+                    <p class="category-desc">Skincare & cosmetics</p>
+                </a>
+                
+                <a href="#jewelry" class="category-card">
+                    <div class="category-icon">💎</div>
+                    <h3 class="category-title">Rings & Chains</h3>
+                    <p class="category-desc">Premium jewelry</p>
+                </a>
+                
+                <a href="#accessories" class="category-card">
+                    <div class="category-icon">🕶️</div>
+                    <h3 class="category-title">Accessories</h3>
+                    <p class="category-desc">Complete your look</p>
+                </a>
+                
+                <a href="#new" class="category-card">
+                    <div class="category-icon">🆕</div>
+                    <h3 class="category-title">New Arrivals</h3>
+                    <p class="category-desc">Latest collections</p>
+                </a>
+                
+                <a href="#offers" class="category-card">
+                    <div class="category-icon">🎁</div>
+                    <h3 class="category-title">Special Offers</h3>
+                    <p class="category-desc">Limited time deals</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="products-section" id="new-arrivals">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">New Arrivals</h2>
+                <a href="#all-products" class="section-link">See All →</a>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be loaded dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Collection Section -->
+    <section class="premium-section">
+        <div class="container">
+            <div class="premium-content">
+                <h2 class="premium-title">Premium Collection</h2>
+                <p class="premium-desc">Exclusive items curated for your unique style. Experience luxury with every purchase.</p>
+                <a href="https://wa.me/233598446269?text=Hi%20FitPlug%21%20I%27m%20interested%20in%20your%20Premium%20Collection." 
+                   target="_blank" class="btn btn-outline">
+                    <i class="fab fa-whatsapp"></i> Inquire on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Shop Seamlessly on WhatsApp</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Browse & Select</h3>
+                    <p class="step-desc">Explore our catalog and add items to your cart</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Checkout on WhatsApp</h3>
+                    <p class="step-desc">Send your order directly to our WhatsApp number</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Confirm & Pay</h3>
+                    <p class="step-desc">Receive payment options and confirm your order</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Track Delivery</h3>
+                    <p class="step-desc">Get updates and track your delivery via WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp CTA Section -->
+    <section class="whatsapp-cta">
+        <div class="container">
+            <div class="whatsapp-cta-content">
+                <div class="whatsapp-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <h2 class="whatsapp-title">Ready to Order?</h2>
+                <p class="whatsapp-desc">Chat with us directly on WhatsApp for personalized service</p>
+                <a href="https://wa.me/233598446269?text=Hi%20FitPlug%21%20I%27d%20like%20to%20place%20an%20order." 
+                   target="_blank" class="btn btn-whatsapp-large">
+                    <i class="fab fa-whatsapp"></i> Start Shopping on WhatsApp
+                </a>
+                <p class="whatsapp-note">We respond within minutes during business hours</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">FitPlug</h3>
+                    <p class="footer-text">Premium shopping experience through WhatsApp. Elevate your style with our curated collections.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Shop</h3>
+                    <ul class="footer-links">
+                        <li><a href="#new-arrivals">New Arrivals</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#premium">Premium Collection</a></li>
+                        <li><a href="#offers">Special Offers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Help</h3>
+                    <ul class="footer-links">
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#payments">Payments</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="#returns">Returns & Exchanges</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="https://wa.me/233598446269" target="_blank">
+                                <i class="fab fa-whatsapp"></i> +233 59 844 6269
+                            </a>
+                        </li>
+                        <li><a href="mailto:hello@fitplug.com">hello@fitplug.com</a></li>
+                        <li>Accra, Ghana</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2023 FitPlug. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h3 class="cart-modal-title">Your Shopping Bag</h3>
+                <button class="cart-modal-close" id="cartModalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="cart-modal-body" id="cartItems">
+                <!-- Cart items will be loaded here -->
+                <div class="cart-empty" id="cartEmpty">
+                    <i class="fas fa-shopping-bag"></i>
+                    <p>Your bag is empty</p>
+                    <a href="#new-arrivals" class="btn btn-outline">Continue Shopping</a>
+                </div>
+            </div>
+            
+            <div class="cart-modal-footer" id="cartFooter">
+                <div class="cart-totals">
+                    <div class="cart-total-row">
+                        <span>Subtotal</span>
+                        <span class="cart-subtotal">GH₵ 0.00</span>
+                    </div>
+                    <div class="cart-total-row">
+                        <span>Delivery</span>
+                        <span class="cart-delivery">GH₵ 15.00</span>
+                    </div>
+                    <div class="cart-total-row cart-total">
+                        <span>Total</span>
+                        <span class="cart-total-amount">GH₵ 15.00</span>
+                    </div>
+                </div>
+                
+                <a href="#" class="btn btn-primary btn-block" id="checkoutWhatsAppBtn">
+                    <i class="fab fa-whatsapp"></i> Checkout on WhatsApp
+                </a>
+                
+                <p class="cart-notice">You'll be redirected to WhatsApp to complete your order</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/233598446269?text=Hi%20FitPlug%21%20I%20have%20a%20question%20about%20your%20products." 
+       target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

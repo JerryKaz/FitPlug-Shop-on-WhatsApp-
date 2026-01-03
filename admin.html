@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPlug Admin | Login</title>
+    <link rel="stylesheet" href="admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+    <!-- Login Container -->
+    <div class="login-container" id="loginContainer">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo">
+                    <span class="logo-icon">🛍️</span>
+                    <span class="logo-text">FitPlug Admin</span>
+                </div>
+                <h2 class="login-title">Admin Login</h2>
+                <p class="login-subtitle">Access your store dashboard</p>
+            </div>
+            
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <div class="input-with-icon">
+                   
+                        <input type="text" id="username" placeholder="Enter username" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-with-icon">
+                      
+                        <input type="password" id="password" placeholder="Enter password" required>
+                    </div>
+                </div>
+                
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#forgot" class="forgot-link">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+                
+                <div class="login-footer">
+                    <p>Default credentials: <strong>jerrykaz</strong> / <strong>10310341</strong></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard (Hidden until login) -->
+    <div class="admin-container" id="adminContainer" style="display: none;">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🛍️</span>
+                    <span class="logo-text">FitPlug Admin</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-link active" data-page="dashboard">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#products" class="nav-link" data-page="products">
+                    <i class="fas fa-tshirt"></i>
+                    <span>Products</span>
+                    <span class="badge" id="productsCount">0</span>
+                </a>
+                <a href="#orders" class="nav-link" data-page="orders">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Orders</span>
+                    <span class="badge" id="ordersCount">0</span>
+                </a>
+                <a href="#inventory" class="nav-link" data-page="inventory">
+                    <i class="fas fa-boxes"></i>
+                    <span>Inventory</span>
+                </a>
+                <a href="#customers" class="nav-link" data-page="customers">
+                    <i class="fas fa-users"></i>
+                    <span>Customers</span>
+                    <span class="badge" id="customersCount">0</span>
+                </a>
+                <a href="#whatsapp" class="nav-link" data-page="whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                    <span class="badge" id="whatsappCount">0</span>
+                </a>
+                <a href="#analytics" class="nav-link" data-page="analytics">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="#media" class="nav-link" data-page="media">
+                    <i class="fas fa-images"></i>
+                    <span>Media</span>
+                </a>
+                <a href="#settings" class="nav-link" data-page="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="admin-profile">
+                    <div class="admin-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="admin-info">
+                        <span class="admin-name" id="adminUsername">Admin User</span>
+                        <span class="admin-role">Store Manager</span>
+                    </div>
+                </div>
+                <div class="sidebar-actions">
+                    <a href="../index.html" target="_blank" class="btn btn-outline btn-sm">
+                        <i class="fas fa-store"></i> <span>View Store</span>
+                    </a>
+                    <button class="btn btn-outline btn-sm" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="admin-main" id="adminMain">
+            <!-- Top Bar -->
+            <header class="admin-topbar">
+                <div class="topbar-left">
+                    <h1 class="page-title" id="pageTitle">Dashboard</h1>
+                    <div class="breadcrumb">
+                        <a href="#dashboard">Home</a> / <span id="breadcrumbCurrent">Dashboard</span>
+                    </div>
+                </div>
+                
+                <div class="topbar-right">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="globalSearch" placeholder="Search products, orders...">
+                    </div>
+                    
+                    <div class="topbar-actions">
+                        <button class="topbar-action" title="Notifications" id="notificationsBtn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">3</span>
+                        </button>
+                        <button class="topbar-action" title="WhatsApp Messages" id="whatsappBtn">
+                            <i class="fab fa-whatsapp"></i>
+                            <span class="badge" id="unreadMessages">5</span>
+                        </button>
+                        <button class="topbar-action" title="Refresh Data" id="refreshBtn">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Page Content Container -->
+            <div class="admin-content" id="pageContent">
+                <!-- Dashboard content will be loaded here dynamically -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <!-- Add Product Modal -->
+    <div class="modal" id="addProductModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Add New Product</h3>
+                <button class="modal-close" id="closeProductModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="productForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="productName">Product Name *</label>
+                            <input type="text" id="productName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productPrice">Price (GH₵) *</label>
+                            <input type="number" id="productPrice" step="0.01" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productCategory">Category *</label>
+                            <select id="productCategory" required>
+                                <option value="">Select Category</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="footwear">Footwear</option>
+                                <option value="accessories">Accessories</option>
+                                <option value="jewelry">Jewelry</option>
+                                <option value="beauty">Beauty</option>
+                                <option value="food">Food</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="productStock">Stock Quantity *</label>
+                            <input type="number" id="productStock" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="productDescription">Description</label>
+                            <textarea id="productDescription" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="productSizes">Sizes (comma separated)</label>
+                            <input type="text" id="productSizes" placeholder="S, M, L, XL">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="productColors">Colors (comma separated)</label>
+                            <input type="text" id="productColors" placeholder="Black, Navy, Gray">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="productImages">Product Images</label>
+                            <div class="file-upload-area" id="imageUploadArea">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Drag & drop images or click to browse</p>
+                                <input type="file" id="productImages" multiple accept="image/*">
+                            </div>
+                            <div class="image-preview" id="imagePreview"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelProductBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveProductBtn">Save Product</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div class="modal" id="editProductModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Product</h3>
+                <button class="modal-close" id="closeEditProductModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="editProductForm">
+                <!-- Form will be loaded dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelEditProductBtn">Cancel</button>
+                <button class="btn btn-primary" id="updateProductBtn">Update Product</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Details Modal -->
+    <div class="modal" id="orderDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Order Details</h3>
+                <button class="modal-close" id="closeOrderModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="orderDetailsContent">
+                <!-- Order details will be loaded here -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="printOrderBtn">
+                    <i class="fas fa-print"></i> Print
+                </button>
+                <button class="btn btn-primary" id="updateOrderStatusBtn">
+                    <i class="fas fa-sync"></i> Update Status
+                </button>
+                <button class="btn btn-whatsapp" id="messageCustomerBtn">
+                    <i class="fab fa-whatsapp"></i> Message Customer
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inventory Update Modal -->
+    <div class="modal" id="inventoryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Update Inventory</h3>
+                <button class="modal-close" id="closeInventoryModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="inventoryForm">
+                <!-- Form will be loaded dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancelInventoryBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveInventoryBtn">Update Stock</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notifications Modal -->
+    <div class="modal" id="notificationsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Notifications</h3>
+                <button class="modal-close" id="closeNotificationsModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="notifications-list" id="notificationsList">
+                    <!-- Notifications will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="clearNotificationsBtn">Clear All</button>
+                <button class="btn btn-primary" id="markAllReadBtn">Mark All as Read</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Messages Modal -->
+    <div class="modal" id="whatsappModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">WhatsApp Messages</h3>
+                <button class="modal-close" id="closeWhatsAppModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="whatsapp-messages" id="whatsappMessages">
+                    <!-- Messages will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="closeWhatsAppBtn">Close</button>
+                <button class="btn btn-whatsapp" id="replyWhatsAppBtn">
+                    <i class="fab fa-whatsapp"></i> Reply
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin-script.js"></script>
+</body>
+</html>
